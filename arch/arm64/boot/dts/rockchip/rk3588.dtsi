@@ -9,6 +9,9 @@
 / {
 	aliases {
 		ethernet0 = &gmac0;
+		mmc0 = &sdhci;
+		mmc1 = &sdio;
+		mmc2 = &sdmmc;
 	};
 
 	gmac0: ethernet@fe1b0000 {
