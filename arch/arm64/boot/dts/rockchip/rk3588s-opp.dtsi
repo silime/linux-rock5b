@@ -1,0 +1,352 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+/*
+ * Copyright (c) 2016-2017 Fuzhou Rockchip Electronics Co., Ltd
+ */
+
+/ {
+
+	cluster0_opp_table: cluster0-opp-table {
+		compatible = "operating-points-v2";
+		opp-shared;
+
+		opp00 {
+			opp-hz = /bits/ 64 <408000000>;
+			opp-microvolt = <675000 675000 950000>;
+			clock-latency-ns = <40000>;
+		};
+		opp01 {
+			opp-hz = /bits/ 64 <600000000>;
+			opp-microvolt = <675000 675000 950000>;
+			clock-latency-ns = <40000>;
+		};
+		opp02 {
+			opp-hz = /bits/ 64 <816000000>;
+			opp-microvolt = <675000 675000 950000>;
+			clock-latency-ns = <40000>;
+		};
+		opp03 {
+			opp-hz = /bits/ 64 <1008000000>;
+			opp-microvolt = <675000 675000 950000>;
+			clock-latency-ns = <40000>;
+		};
+		opp04 {
+			opp-hz = /bits/ 64 <1200000000>;
+			opp-microvolt = <700000 700000 950000>;
+			opp-microvolt-L1 = <687500 687500 950000>;
+			opp-microvolt-L2 = <687500 687500 950000>;
+			opp-microvolt-L3 = <687500 687500 950000>;
+			opp-microvolt-L4 = <675000 675000 950000>;
+			opp-microvolt-L5 = <675000 675000 950000>;
+			opp-microvolt-L6 = <675000 675000 950000>;
+			clock-latency-ns = <40000>;
+		};
+		opp05 {
+			opp-hz = /bits/ 64 <1416000000>;
+			opp-microvolt = <762500 762500 950000>;
+			opp-microvolt-L1 = <750000 750000 950000>;
+			opp-microvolt-L2 = <737500 737500 950000>;
+			opp-microvolt-L3 = <725000 725000 950000>;
+			opp-microvolt-L4 = <725000 725000 950000>;
+			opp-microvolt-L5 = <712500 712500 950000>;
+			opp-microvolt-L6 = <712500 712500 950000>;
+			clock-latency-ns = <40000>;
+			opp-suspend;
+		};
+		opp06 {
+			opp-hz = /bits/ 64 <1608000000>;
+			opp-microvolt = <850000 850000 950000>;
+			opp-microvolt-L1 = <837500 837500 950000>;
+			opp-microvolt-L2 = <825000 825000 950000>;
+			opp-microvolt-L3 = <812500 812500 950000>;
+			opp-microvolt-L4 = <800000 800000 950000>;
+			opp-microvolt-L5 = <800000 800000 950000>;
+			opp-microvolt-L6 = <787500 787500 950000>;
+			clock-latency-ns = <40000>;
+		};
+		opp07 {
+			opp-hz = /bits/ 64 <1800000000>;
+			opp-microvolt = <950000 950000 950000>;
+			opp-microvolt-L1 = <937500 937500 950000>;
+			opp-microvolt-L2 = <925000 925000 950000>;
+			opp-microvolt-L3 = <912500 912500 950000>;
+			opp-microvolt-L4 = <900000 900000 950000>;
+			opp-microvolt-L5 = <887500 887500 950000>;
+			opp-microvolt-L6 = <875000 875000 950000>;
+			clock-latency-ns = <40000>;
+		};
+	};
+
+	cluster1_opp_table: cluster1-opp-table {
+		compatible = "operating-points-v2";
+		opp-shared;
+
+		opp00 {
+			opp-hz = /bits/ 64 <408000000>;
+			opp-microvolt = <675000 675000 1000000>;
+			clock-latency-ns = <40000>;
+			opp-suspend;
+		};
+		opp01 {
+			opp-hz = /bits/ 64 <600000000>;
+			opp-microvolt = <675000 675000 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp02 {
+			opp-hz = /bits/ 64 <816000000>;
+			opp-microvolt = <675000 675000 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp03 {
+			opp-hz = /bits/ 64 <1008000000>;
+			opp-microvolt = <675000 675000 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp04 {
+			opp-hz = /bits/ 64 <1200000000>;
+			opp-microvolt = <675000 675000 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp05 {
+			opp-hz = /bits/ 64 <1416000000>;
+			opp-microvolt = <700000 700000 1000000>;
+			opp-microvolt-L1 = <687500 687500 1000000>;
+			opp-microvolt-L2 = <675000 675000 1000000>;
+			opp-microvolt-L3 = <675000 675000 1000000>;
+			opp-microvolt-L4 = <675000 675000 1000000>;
+			opp-microvolt-L5 = <675000 675000 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp06 {
+			opp-hz = /bits/ 64 <1608000000>;
+			opp-microvolt = <750000 750000 1000000>;
+			opp-microvolt-L1 = <737500 737500 1000000>;
+			opp-microvolt-L2 = <725000 725000 1000000>;
+			opp-microvolt-L3 = <712500 712500 1000000>;
+			opp-microvolt-L4 = <700000 700000 1000000>;
+			opp-microvolt-L5 = <700000 700000 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp07 {
+			opp-hz = /bits/ 64 <1800000000>;
+			opp-microvolt = <825000 825000 1000000>;
+			opp-microvolt-L1 = <812500 812500 1000000>;
+			opp-microvolt-L2 = <800000 800000 1000000>;
+			opp-microvolt-L3 = <787500 787500 1000000>;
+			opp-microvolt-L4 = <775000 775000 1000000>;
+			opp-microvolt-L5 = <762500 762500 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp08 {
+			opp-hz = /bits/ 64 <2016000000>;
+			opp-microvolt = <900000 900000 1000000>;
+			opp-microvolt-L1 = <887500 887500 1000000>;
+			opp-microvolt-L2 = <875000 875000 1000000>;
+			opp-microvolt-L3 = <862500 862500 1000000>;
+			opp-microvolt-L4 = <850000 850000 1000000>;
+			opp-microvolt-L5 = <837500 837500 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp09 {
+			opp-hz = /bits/ 64 <2208000000>;
+			opp-microvolt = <975000 975000 1000000>;
+			opp-microvolt-L2 = <962500 962500 1000000>;
+			opp-microvolt-L3 = <950000 950000 1000000>;
+			opp-microvolt-L4 = <925000 925000 1000000>;
+			opp-microvolt-L5 = <912500 912500 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp10 {
+			opp-hz = /bits/ 64 <2400000000>;
+			opp-microvolt = <1000000 1000000 1000000>;
+			opp-microvolt-L3 = <987500 987500 1000000>;
+			opp-microvolt-L4 = <975000 975000 1000000>;
+			opp-microvolt-L5 = <962500 962500 1000000>;
+			clock-latency-ns = <40000>;
+		};
+	};
+
+	cluster2_opp_table: cluster2-opp-table {
+		compatible = "operating-points-v2";
+		opp-shared;
+
+		opp00 {
+			opp-hz = /bits/ 64 <408000000>;
+			opp-microvolt = <675000 675000 1000000>;
+			clock-latency-ns = <40000>;
+			opp-suspend;
+		};
+		opp01 {
+			opp-hz = /bits/ 64 <600000000>;
+			opp-microvolt = <675000 675000 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp02 {
+			opp-hz = /bits/ 64 <816000000>;
+			opp-microvolt = <675000 675000 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp03 {
+			opp-hz = /bits/ 64 <1008000000>;
+			opp-microvolt = <675000 675000 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp04 {
+			opp-hz = /bits/ 64 <1200000000>;
+			opp-microvolt = <675000 675000 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp05 {
+			opp-hz = /bits/ 64 <1416000000>;
+			opp-microvolt = <700000 700000 1000000>;
+			opp-microvolt-L1 = <687500 687500 1000000>;
+			opp-microvolt-L2 = <675000 675000 1000000>;
+			opp-microvolt-L3 = <675000 675000 1000000>;
+			opp-microvolt-L4 = <675000 675000 1000000>;
+			opp-microvolt-L5 = <675000 675000 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp06 {
+			opp-hz = /bits/ 64 <1608000000>;
+			opp-microvolt = <750000 750000 1000000>;
+			opp-microvolt-L1 = <737500 737500 1000000>;
+			opp-microvolt-L2 = <725000 725000 1000000>;
+			opp-microvolt-L3 = <712500 712500 1000000>;
+			opp-microvolt-L4 = <700000 700000 1000000>;
+			opp-microvolt-L5 = <700000 700000 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp07 {
+			opp-hz = /bits/ 64 <1800000000>;
+			opp-microvolt = <825000 825000 1000000>;
+			opp-microvolt-L1 = <812500 812500 1000000>;
+			opp-microvolt-L2 = <800000 800000 1000000>;
+			opp-microvolt-L3 = <787500 787500 1000000>;
+			opp-microvolt-L4 = <775000 775000 1000000>;
+			opp-microvolt-L5 = <762500 762500 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp08 {
+			opp-hz = /bits/ 64 <2016000000>;
+			opp-microvolt = <900000 900000 1000000>;
+			opp-microvolt-L1 = <887500 887500 1000000>;
+			opp-microvolt-L2 = <875000 875000 1000000>;
+			opp-microvolt-L3 = <862500 862500 1000000>;
+			opp-microvolt-L4 = <850000 850000 1000000>;
+			opp-microvolt-L5 = <837500 837500 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp09 {
+			opp-hz = /bits/ 64 <2208000000>;
+			opp-microvolt = <975000 975000 1000000>;
+			opp-microvolt-L2 = <962500 962500 1000000>;
+			opp-microvolt-L3 = <950000 950000 1000000>;
+			opp-microvolt-L4 = <925000 925000 1000000>;
+			opp-microvolt-L5 = <912500 912500 1000000>;
+			clock-latency-ns = <40000>;
+		};
+		opp10 {
+			opp-hz = /bits/ 64 <2400000000>;
+			opp-microvolt = <1000000 1000000 1000000>;
+			opp-microvolt-L3 = <987500 987500 1000000>;
+			opp-microvolt-L4 = <975000 975000 1000000>;
+			opp-microvolt-L5 = <962500 962500 1000000>;
+			clock-latency-ns = <40000>;
+		};
+	};
+
+	gpu_opp_table: gpu-opp-table {
+		compatible = "operating-points-v2";
+
+		opp-300000000 {
+			opp-hz = /bits/ 64 <300000000>;
+			opp-microvolt = <625000 625000 850000>;
+		};
+		opp-400000000 {
+			opp-hz = /bits/ 64 <400000000>;
+			opp-microvolt = <625000 625000 850000>;
+		};
+		opp-500000000 {
+			opp-hz = /bits/ 64 <500000000>;
+			opp-microvolt = <625000 625000 850000>;
+		};
+		opp-600000000 {
+			opp-hz = /bits/ 64 <600000000>;
+			opp-microvolt = <662500 662500 850000>;
+			opp-microvolt-L2 = <650000 650000 850000>;
+			opp-microvolt-L3 = <637500 637500 850000>;
+			opp-microvolt-L4 = <625000 625000 850000>;
+			opp-microvolt-L5 = <625000 625000 850000>;
+		};
+		opp-700000000 {
+			opp-hz = /bits/ 64 <700000000>;
+			opp-microvolt = <700000 700000 850000>;
+			opp-microvolt-L2 = <687500 687500 850000>;
+			opp-microvolt-L3 = <675000 675000 850000>;
+			opp-microvolt-L4 = <662500 662500 850000>;
+			opp-microvolt-L5 = <662500 662500 850000>;
+		};
+		opp-800000000 {
+			opp-hz = /bits/ 64 <800000000>;
+			opp-microvolt = <750000 750000 850000>;
+			opp-microvolt-L1 = <737500 737500 850000>;
+			opp-microvolt-L2 = <725000 725000 850000>;
+			opp-microvolt-L3 = <712500 712500 850000>;
+			opp-microvolt-L4 = <700000 700000 850000>;
+			opp-microvolt-L5 = <700000 700000 850000>;
+		};
+		opp-900000000 {
+			opp-hz = /bits/ 64 <900000000>;
+			opp-microvolt = <800000 800000 850000>;
+			opp-microvolt-L1 = <787500 787500 850000>;
+			opp-microvolt-L2 = <775000 775000 850000>;
+			opp-microvolt-L3 = <762500 762500 850000>;
+			opp-microvolt-L4 = <750000 750000 850000>;
+			opp-microvolt-L5 = <737500 737500 850000>;
+		};
+		opp-1000000000 {
+			opp-hz = /bits/ 64 <1000000000>;
+			opp-microvolt = <850000 850000 850000>;
+			opp-microvolt-L1 = <837500 837500 850000>;
+			opp-microvolt-L2 = <825000 825000 850000>;
+			opp-microvolt-L3 = <812500 812500 850000>;
+			opp-microvolt-L4 = <800000 800000 850000>;
+			opp-microvolt-L5 = <787500 787500 850000>;
+		};
+	};
+};
+
+&cpu_l0 {
+	operating-points-v2 = <&cluster0_opp>;
+};
+
+&cpu_l1 {
+	operating-points-v2 = <&cluster0_opp_table>;
+};
+
+&cpu_l2 {
+	operating-points-v2 = <&cluster0_opp_table>;
+};
+
+&cpu_l3 {
+	operating-points-v2 = <&cluster0_opp_table>;
+};
+
+&cpu_b0 {
+	operating-points-v2 = <&cluster1_opp_table>;
+};
+
+&cpu_b1 {
+	operating-points-v2 = <&cluster1_opp_table>;
+};
+
+&cpu_b2 {
+	operating-points-v2 = <&cluster2_opp_table>;
+};
+
+&cpu_b3 {
+	operating-points-v2 = <&cluster2_opp_table>;
+};
+
+&gpu {
+	operating-points-v2 = <&gpu_opp_table>;
+};
