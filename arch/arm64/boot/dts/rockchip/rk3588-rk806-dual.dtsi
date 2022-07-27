@@ -589,7 +589,6 @@
 				};
 			};
 
-
 			vdd_cpu_big0_mem_s0: DCDC_REG6 {
 				regulator-always-on;
 				regulator-boot-on;
