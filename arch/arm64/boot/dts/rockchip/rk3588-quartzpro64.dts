@@ -171,6 +171,8 @@
 	no-sdio;
 	no-sd;
 	non-removable;
+	vmmc-supply = <&vcc_3v3_s0>;
+	vqmmc-supply = <&vcc_1v8_s0>;
 	/* HS400 disabled for now due to flakiness on init
 	mmc-hs400-1_8v;
 	mmc-hs400-enhanced-strobe;
