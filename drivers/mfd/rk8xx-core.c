@@ -651,7 +651,7 @@ int rk8xx_probe(struct device *dev, int variant, unsigned int irq, struct regmap
 		return dev_err_probe(dev, -EINVAL, "No interrupt support, no core IRQ\n");
 
 	ret = devm_regmap_add_irq_chip(dev, rk808->regmap, irq,
-				       IRQF_ONESHOT | dual_support ? IRQF_SHARED : 0, -1,
+				       IRQF_ONESHOT | (dual_support ? IRQF_SHARED : 0), -1,
 				       rk808->regmap_irq_chip, &rk808->irq_data);
 	if (ret)
 		return dev_err_probe(dev, ret, "Failed to add irq_chip\n");
