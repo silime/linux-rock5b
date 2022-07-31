@@ -115,6 +115,12 @@
 	status = "okay";
 };
 
+&gpu {
+	mali-supply = <&vdd_gpu_s0>;
+	mem-supply = <&vdd_gpu_mem_s0>;
+	status = "disabled";
+};
+
 &gmac0 {
 	phy-mode = "rgmii-rxid";
 	clock_in_out = "output";
@@ -181,6 +187,18 @@
 &uart2 {
 	pinctrl-0 = <&uart2m0_xfer>;
 	status = "okay";
+};
+
+&uart8 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart8m1_xfer &uart8m1_rtsn &uart8m1_ctsn>;
+	uart-has-rtscts;
+
+	bluetooth {
+		compatible = "brcm,bcm4375-bt";
+		status = "disabled";
+	};
 };
 
 &i2c2 {
