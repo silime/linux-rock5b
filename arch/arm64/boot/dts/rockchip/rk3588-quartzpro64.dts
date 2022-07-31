@@ -8,6 +8,7 @@
 
 #include <dt-bindings/pinctrl/rockchip.h>
 #include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/leds/common.h>
 #include "rk3588.dtsi"
 #include "rk3588-rk806-dual.dtsi"
 
@@ -21,9 +22,11 @@
 
 	leds {
 		compatible = "gpio-leds";
-		work_led: work {
+		work_led: led-0 {
 			gpios = <&gpio3 RK_PB7 GPIO_ACTIVE_HIGH>;
 			linux,default-trigger = "heartbeat";
+			function = LED_FUNCTION_STATUS;
+			color = <LED_COLOR_ID_AMBER>;
 		};
 	};
 
@@ -98,27 +101,7 @@
 	mem-supply = <&vdd_cpu_lit_mem_s0>;
 };
 
-&cpu_l1 {
-	cpu-supply = <&vdd_cpu_lit_s0>;
-	mem-supply = <&vdd_cpu_lit_mem_s0>;
-};
-
-&cpu_l2 {
-	cpu-supply = <&vdd_cpu_lit_s0>;
-	mem-supply = <&vdd_cpu_lit_mem_s0>;
-};
-
-&cpu_l3 {
-	cpu-supply = <&vdd_cpu_lit_s0>;
-	mem-supply = <&vdd_cpu_lit_mem_s0>;
-};
-
 &cpu_b0 {
-	cpu-supply = <&vdd_cpu_big0_s0>;
-	mem-supply = <&vdd_cpu_big0_mem_s0>;
-};
-
-&cpu_b1 {
 	cpu-supply = <&vdd_cpu_big0_s0>;
 	mem-supply = <&vdd_cpu_big0_mem_s0>;
 };
@@ -128,9 +111,8 @@
 	mem-supply = <&vdd_cpu_big1_mem_s0>;
 };
 
-&cpu_b3 {
-	cpu-supply = <&vdd_cpu_big1_s0>;
-	mem-supply = <&vdd_cpu_big1_mem_s0>;
+&tsadc {
+	status = "okay";
 };
 
 &gmac0 {
@@ -152,15 +134,16 @@
 	tx_delay = <0x43>;
 	rx_delay = <0x00>;
 
-	phy-handle = <&rgmii_phy>;
+	phy-handle = <&phy1>;
+	phy-supply = <&vcc_3v3_s0>;
 	status = "okay";
 };
 
 &mdio0 {
-	rgmii_phy: phy@1 {
+	phy1: ethernet-phy@1 {
 		compatible = "ethernet-phy-ieee802.3-c22";
-		reg = <0x1>;
-		#phy-cells = <0>;
+		reg = <1>;
+		max-speed = <1000>;
 	};
 };
 
