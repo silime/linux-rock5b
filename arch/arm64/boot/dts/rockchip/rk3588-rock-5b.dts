@@ -17,10 +17,7 @@
 	model = "Radxa ROCK 5B";
 	compatible = "radxa,rock-5b", "rockchip,rk3588";
 
-	aliases {
-		mmc0 = &sdhci;
-		mmc1 = &sdmmc;
-	};
+
 
 	chosen {
 		stdout-path = "serial2:1500000n8";
@@ -28,11 +25,13 @@
 
 	leds {
 		compatible = "gpio-leds";
+		pinctrl-names = "default";
+		pinctrl-0 = <&led_rgb_b>;
 		work_led: led-0 {
 			gpios = <&gpio0 RK_PB7 GPIO_ACTIVE_HIGH>;
 			linux,default-trigger = "heartbeat";
 			function = LED_FUNCTION_STATUS;
-			color = <LED_COLOR_ID_AMBER>;
+			color = <LED_COLOR_ID_BLUE>;
 		};
 	};
 
@@ -148,11 +147,11 @@
 	no-sd;
 	non-removable;
 	max-frequency = <150000000>;
-	mmc-hs200-1_8v;
-	// mmc-hs400-1_8v;
-	// mmc-hs400-enhanced-strobe;
-	vmmc-supply = <&vcc_3v3_s0>;
-	vqmmc-supply = <&vcc_1v8_s0>;
+	// mmc-hs200-1_8v;
+	mmc-hs400-1_8v;
+	mmc-hs400-enhanced-strobe;
+	// vmmc-supply = <&vcc_3v3_s0>;
+	// vqmmc-supply = <&vcc_1v8_s0>;
 	pinctrl-names = "default";
 	pinctrl-0 = <&emmc_bus8
 		     &emmc_clk
@@ -187,6 +186,8 @@
 
 &i2c0 {
 	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&i2c0m2_xfer>;
 
 	vdd_cpu_big0_s0: vdd_cpu_big0_mem_s0: rk8602@42 {
 		compatible = "rockchip,rk8602";
@@ -225,6 +226,8 @@
 
 &i2c1 {
 	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&i2c1m2_xfer>;
 
 	vdd_npu_s0: vdd_npu_mem_s0: rk8602@42 {
 		compatible = "rockchip,rk8602";
@@ -245,32 +248,29 @@
 };
 
 
-&combphy1 {
-	rockchip,ext-refclk;
-	status = "okay";
-};
+
 
 &combphy0 {
 	status = "okay";
 };
 /*
- RTL8125 ?
+ RTL8125 
 */
 &pcie2x1l2 {
 	reset-gpios = <&gpio3 RK_PB0 GPIO_ACTIVE_HIGH>;
 	vpcie3v3-supply = <&vcc3v3_pcie2x1l2>;
 	status = "okay";
 };
+&combphy1 {
+	rockchip,ext-refclk;
+	status = "disabled";
+};
 /**
-  wifi ?
+  wifi 
 **/
 &pcie2x1l0 {
 	reset-gpios = <&gpio4 RK_PA5 GPIO_ACTIVE_HIGH>;
 	vpcie3v3-supply = <&vcc3v3_pcie2x1l0>;
-	status = "okay";
-};
-&combphy2 {
-	rockchip,ext-refclk;
 	status = "disabled";
 };
 
@@ -291,7 +291,11 @@
 
 &pinctrl {
 
-
+	leds {
+		led_rgb_b: led-rgb-b {
+			rockchip,pins = <0 RK_PB7 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+	};
 	pcie30x4 {
 		pcie30x4_pwren_h: pcie30x4-pwren-h {
 			rockchip,pins = <1 RK_PA4 RK_FUNC_GPIO &pcfg_pull_none>;
