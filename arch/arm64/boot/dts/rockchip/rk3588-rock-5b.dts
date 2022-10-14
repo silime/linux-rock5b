@@ -342,8 +342,7 @@
 	status = "okay";
 };
 &combphy1 {
-	rockchip,ext-refclk;
-	status = "disabled";
+	status = "okay";
 };
 /**
   wifi 
@@ -351,7 +350,7 @@
 &pcie2x1l0 {
 	reset-gpios = <&gpio4 RK_PA5 GPIO_ACTIVE_HIGH>;
 	vpcie3v3-supply = <&vcc3v3_pcie2x1l0>;
-	status = "disabled";
+	status = "okay";
 };
 
 
